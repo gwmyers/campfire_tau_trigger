@@ -1,1 +1,1 @@
-The Special Unitary Group 3 tau trigger project 
+The Special Unitary Group #3 tau trigger project 
