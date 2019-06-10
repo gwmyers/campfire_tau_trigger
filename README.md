@@ -1,1 +1,1 @@
-The Special Unitary Group #3 tau trigger project 
+The SU(3) x U(1) tau trigger project 
