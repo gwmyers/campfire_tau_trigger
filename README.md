@@ -8,7 +8,7 @@ The original data files are:
 |---|---|
 |`output_MB80.root`|`ztt_Output.root`|
 
-The flags have different names and different data structure in these two files, so they are reformated and stored at `./formated/` as
+The flags have different names and different data structure in these two files, so they are reformatted and stored at `./formatted/` as
 
 |Background|Signal|
 |---|---|
@@ -16,7 +16,7 @@ The flags have different names and different data structure in these two files, 
 
 There are five variables in the new files. They are all single float number, which is the sum of the array from the original data files.
 
-|Variable in reformated file|(original bkg) sum of |(original sig) sum of |
+|Variable in reformatted file|(original bkg) sum of |(original sig) sum of |
 |---|---|---|
 |`L0EM`|`L0CellEt`|`scellsEM0`|
 |`L1EM`|`L1CellEt`|`scellsEM1`|
