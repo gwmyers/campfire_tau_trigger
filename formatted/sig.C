@@ -28,6 +28,10 @@ void sig::Reformat()
   for(Long64_t jentry=0; jentry<nentries; jentry++)
   {
     GetEntry(jentry);
+    if(trueTauEta<-1.4 || trueTauEta>1.4)
+    {
+      continue;
+    }
 
     // Initialize all varibles
     L0EM=0;
