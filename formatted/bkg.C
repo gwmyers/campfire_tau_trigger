@@ -58,6 +58,6 @@ void bkg::Reformat()
     }
     bkgTree->Fill();
   }
-  bkgTree->Write();
+  TreeSeperation(bkgTree);
   outputFile->Close();
 }
