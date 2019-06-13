@@ -72,6 +72,6 @@ void sig::Reformat()
     }
     sigTree->Fill();
   }
-  sigTree->Write();
+  TreeSeperation(sigTree);
   outputFile->Close();
 }

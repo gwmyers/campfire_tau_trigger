@@ -63,6 +63,7 @@ public :
    virtual void     Reformat();
    virtual Bool_t   Notify();
    virtual void     Show(Long64_t entry = -1);
+   virtual void     TreeSeperation(TTree *inputTree);
 };
 
 #endif
@@ -171,5 +172,38 @@ Int_t sig::Cut(Long64_t entry)
 // returns  1 if entry is accepted.
 // returns -1 otherwise.
    return 1;
+}
+
+void sig::TreeSeperation(TTree *inputTree)
+{
+  std::cout<<"Seperating training and validation trees...";
+
+  // Declare training and validation trees
+  TTree *trainingTree=new TTree;
+  trainingTree=inputTree->CloneTree(0);
+  trainingTree->SetName("signal");
+
+  TTree *validateTree=new TTree;
+  validateTree=inputTree->CloneTree(0);
+  validateTree->SetName("validationTree");
+
+
+  Long64_t nentries=inputTree->GetEntries();
+  for(Long64_t jentry=0; jentry<nentries; jentry++)
+  {
+    inputTree->GetEntry(jentry);
+    if(jentry<(Long64_t)nentries*0.8)
+    {
+      trainingTree->Fill();
+    }
+    else
+    {
+      validateTree->Fill();
+    }
+  }
+
+  trainingTree->Write(0,TObject::kOverwrite);
+  validateTree->Write(0,TObject::kOverwrite);
+  std::cout<<"Done.\n";
 }
 #endif // #ifdef sig_cxx
