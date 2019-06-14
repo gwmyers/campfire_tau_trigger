@@ -1,5 +1,6 @@
 # jupyter-created folder:
 .ipynb_checkpoints/
-
+# Mac OSX bs
+*.DS_Store/
 #All pdfs
 *.pdf
